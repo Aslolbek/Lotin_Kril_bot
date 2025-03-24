@@ -1,6 +1,6 @@
 const {Bot, InputFile} = require("grammy")
 require('dotenv').config()
-const TOKEN = process.env.token
+const TOKEN = "7913269120:AAHyaBpD1G3NsrI7fKLdS3CNtoMocAUQ3L8"
 const bot = new Bot(TOKEN)
 
 bot.command("start", async (ctx) => {
