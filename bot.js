@@ -1,7 +1,9 @@
 const {Bot, InputFile} = require("grammy")
 require('dotenv').config()
-const TOKEN = "7913269120:AAHyaBpD1G3NsrI7fKLdS3CNtoMocAUQ3L8"
+const express = require('express')
+const TOKEN = "8094748437:AAE_jNSVoYwXjQA4pFbKHSA9nA3YEw-8B6s"
 const bot = new Bot(TOKEN)
+const app = express()
 
 bot.command("start", async (ctx) => {
     await ctx.reply("Assalomu alaykum! Botimizga xush kelibsiz! Biz siz yuborgan matnni Lotin/krel hariflarida yoki kril/lotin hariflarida yozib beramiz " )
@@ -229,3 +231,14 @@ bot.on("message", async (ctx) => {
 
 
 bot.start()
+
+
+app.get("/", (req, res) => {
+  res.send("Bot is running...");
+});
+
+const PORT = process.env.PORT || 5000; 
+
+app.listen(PORT,  () => {
+  console.log(`Server running on port 5000`);
+});
