@@ -33,7 +33,7 @@ bot.on("message", async (ctx) => {
             case 'b':
               matn += 'б';
               break;
-            case 'c':
+            case 's':
               matn += 'с';
               break;
             case 'd':
@@ -48,8 +48,17 @@ bot.on("message", async (ctx) => {
             case 'g':
               matn += 'г';
               break;
-            case 'h':
-              matn += 'ҳ';
+            case 'h': if(char ==='h'){
+              if(text.charAt(i-1)?.toLowerCase() === 's'){
+                matn = matn.slice(0, -1) + 'Ш';
+              } else if(text.charAt(i-1)?.toLowerCase() === 'c') {
+                matn = matn.slice(0, -1) + 'ч';
+
+              } else {
+
+                matn += 'ҳ';
+              }
+            }
               break;
             case 'i':
               matn += 'и';
@@ -81,7 +90,7 @@ bot.on("message", async (ctx) => {
             case 'r':
               matn += 'р';
               break;
-            case 's':
+            case 'c':
               matn += 'с';
               break;
             case 't':
@@ -91,9 +100,6 @@ bot.on("message", async (ctx) => {
               matn += 'у';
               break;
             case 'v':
-              matn += 'в';
-              break;
-            case 'w':
               matn += 'в';
               break;
             case 'x':
@@ -130,7 +136,7 @@ bot.on("message", async (ctx) => {
         matn += 'b';
         break;
       case 'с':
-        matn += 'c';
+        matn += 's';
         break;
       case 'д':
         matn += 'd';
@@ -206,6 +212,18 @@ bot.on("message", async (ctx) => {
             break;
       case 'щ':
             matn += 'sh';
+            break;
+      case 'ў':
+            matn += `o'`;
+            break;
+      case 'ғ':
+            matn += `g'`;
+            break;
+      case 'ч':
+            matn += `ch`;
+            break;
+      case 'ь':
+            matn += ``;
             break;
       case 'ш':
                 matn += 'sh';
