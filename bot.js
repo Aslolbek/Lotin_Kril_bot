@@ -228,6 +228,15 @@ bot.on("message", async (ctx) => {
       case 'ш':
                 matn += 'sh';
                 break;
+      case 'я':
+                matn += 'ya';
+                break;
+      case 'э':
+                matn += 'e';
+                break;
+      case 'ё':
+                matn += 'yo';
+                break;
      case ' ':
            matn += ' ';
           break;
@@ -255,7 +264,7 @@ app.get("/", (req, res) => {
   res.send("Bot is running...");
 });
 
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT || 4000; 
 
 app.listen(PORT,  () => {
   console.log(`Server running on port 5000`);
