@@ -260,10 +260,13 @@ bot.on("message", async (ctx) => {
 bot.start()
 
 
-app.get("/", (req, res) => {
-  res.send("Bot is running...");
+
+app.post(`/bot8094748437:AAE_jNSVoYwXjQA4pFbKHSA9nA3YEw-8B6s`, (req, res) => {
+  bot.processUpdate(req.body)
+  res.sendStatus(200);
 });
 
+bot.api.setWebhook("https://lotin-kril-bot.onrender.com/webhook");
 const PORT = process.env.PORT || 4000; 
 
 app.listen(PORT,  () => {
